@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-30T13:07:57 GMT" name="Default suite" finished-at="2025-12-30T13:08:04 GMT" duration-ms="7277">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.PlayListRunner@77fbd92c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-12-30T13:07:57 GMT" name="Default test" finished-at="2025-12-30T13:08:04 GMT" duration-ms="7277">
+      <class name="runners.PlayListRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.PlayListRunner@77fbd92c]" started-at="2025-12-30T13:07:57 GMT" name="setUpClass" finished-at="2025-12-30T13:07:57 GMT" duration-ms="133" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4a7db5a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.PlayListRunner@77fbd92c]" started-at="2025-12-30T13:07:57 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-30T13:08:04 GMT" duration-ms="6553" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["verify if create playlist is working"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["validate playlist api's"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.PlayListRunner@77fbd92c]" started-at="2025-12-30T13:08:04 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-30T13:08:04 GMT" duration-ms="224" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["verify if fetch playlist functionality is working"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["validate playlist api's"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.PlayListRunner@77fbd92c]" started-at="2025-12-30T13:08:04 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-30T13:08:04 GMT" duration-ms="353" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["verify if update playlist functionality is working"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["validate playlist api's"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.PlayListRunner@77fbd92c]" started-at="2025-12-30T13:08:04 GMT" name="tearDownClass" finished-at="2025-12-30T13:08:04 GMT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runners.PlayListRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

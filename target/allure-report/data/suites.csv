@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Dec 30 16:37:51 GMT 2025","Tue Dec 30 16:37:51 GMT 2025","265","","validate playlist api's","","verify if update playlist functionality is working","","verify if update playlist functionality is working",""
+"passed","Tue Dec 30 16:37:51 GMT 2025","Tue Dec 30 16:37:51 GMT 2025","187","","validate playlist api's","","verify if fetch playlist functionality is working","","verify if fetch playlist functionality is working",""
+"passed","Tue Dec 30 16:37:49 GMT 2025","Tue Dec 30 16:37:51 GMT 2025","1356","","validate playlist api's","","verify if create playlist is working","","verify if create playlist is working",""
