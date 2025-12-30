@@ -1,0 +1,5 @@
+allure-results/
+allure-report/
+target/
+Config.properties
+.DS_Store
