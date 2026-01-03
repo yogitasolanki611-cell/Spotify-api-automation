@@ -71,18 +71,24 @@ Spotify_RestAssured
 └── README.md
 ```
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**🧩 Core Framework Components**
+🧩 Core Framework Components
+🔹 POJO Layer (src/main/java/POJO)
 
-**🔹 POJO Layer (src/main/java/POJO)**
-- Models Spotify API request & response bodies
-- Uses Jackson annotations for JSON serialization/deserialization
-- Ensures clean separation between test logic and API contracts
-- Improves maintainability and protects tests from API schema changes.
+Models Spotify API request and response payloads
 
-- Example:
-  - PlayList.java
-  - Owner.java
-  - Tracks.java
+Uses Jackson annotations for JSON serialization/deserialization
+
+Maintains a clean separation between test logic and API contracts
+
+Improves maintainability and shields tests from API schema changes
+
+Example Classes
+
+PlayList.java
+
+Owner.java
+
+Tracks.java
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 🔹 **Authentication Manager (Authmanager)**
