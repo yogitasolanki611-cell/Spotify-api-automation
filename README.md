@@ -6,11 +6,12 @@ This repository contains a production-grade API automation framework for validat
 pipelines using GitHub Actions and Jenkins.
 
 The framework is designed with real-world automation principles, focusing on:
-Secure credential handling
-OAuth 2.0 authentication
-CI-safe execution
-Environment independence
-Robust API response handling
+
+- Secure credential handling
+- OAuth 2.0 authentication
+- CI-safe execution
+- Environment independence
+- Robust API response handling
 
 **🧰 Technology Stack**
 
