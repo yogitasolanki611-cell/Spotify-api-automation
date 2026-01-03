@@ -97,14 +97,29 @@ Spotify_RestAssured
 
 ### 🔹 Spec Builder (`SpecBuilder`)
 - Centralized request/response specification
-- Defines base URI, headers, authentication, logging
+  
+- Defines:
+  - `Base URI`
+  - `Headers`
+  - `Authentication`
+  - `Logging`
+    
+- Eliminates duplication across API calls
 
 ### 🔹 Property Management (`PropReader`)
 - Reads configuration dynamically
 - Supports CI-friendly environment variables
+- Avoids hardcoding secrets inside the codebase
 
 ### 🔹 BDD Layer (Feature Files)
-- Written using Gherkin syntax
+- Written in Gherkin syntax
+- Improves readability and stakeholder understanding
+
+- Example  Scenario:
+  - `Step 1: Create Spotify Playlist`
+  - `Step 2: Given user has valid access token`
+  - `Step 3: When user creates a playlist`
+  - `Step 4: Then playlist should be created successfully`
 
 ### 🔹 Step Definitions (`PlaylistSteps`)
 - Maps Gherkin steps to Rest Assured logic
