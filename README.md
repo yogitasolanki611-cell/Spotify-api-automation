@@ -7,13 +7,13 @@
 
 This repository contains a **production-grade API automation framework** for validating **Spotify Playlist APIs**, built using **Java, Rest Assured, TestNG, and Maven**, and fully integrated with **CI/CD pipelines** using **GitHub Actions** and **Jenkins**.
 
-The framework is designed using **real-world automation engineering principles**, focusing on:
+The framework is designed following **real-world automation engineering principles**, with a strong focus on:
 
 - Secure credential handling  
 - OAuth 2.0 authentication  
 - CI-safe execution  
-- Environment-independent execution  
-- Robust API response validation  
+- Environment-independent design  
+- Robust API request and response validation  
 
 ---
 
@@ -70,119 +70,67 @@ Spotify_RestAssured
 ├── Jenkinsfile
 └── README.md
 ```
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-🧩 Core Framework Components
-🔹 POJO Layer (src/main/java/POJO)
 
-Models Spotify API request and response payloads
+---
 
-Uses Jackson annotations for JSON serialization/deserialization
+## 🧩 Core Framework Components
 
-Maintains a clean separation between test logic and API contracts
+### 🔹 POJO Layer (`src/main/java/POJO`)
+- Models Spotify API request and response payloads
+- Uses Jackson annotations for JSON serialization/deserialization
+- Clean separation between API contracts and test logic
 
-Improves maintainability and shields tests from API schema changes
+### 🔹 Authentication Manager (`Authmanager`)
+- Implements OAuth 2.0 Refresh Token flow
+- Dynamically generates access tokens
+- Prevents token expiry in CI runs
 
-Example Classes
+### 🔹 Spec Builder (`SpecBuilder`)
+- Centralized request/response specification
+- Defines base URI, headers, authentication, logging
 
-PlayList.java
+### 🔹 Property Management (`PropReader`)
+- Reads configuration dynamically
+- Supports CI-friendly environment variables
 
-Owner.java
+### 🔹 BDD Layer (Feature Files)
+- Written using Gherkin syntax
 
-Tracks.java
+### 🔹 Step Definitions (`PlaylistSteps`)
+- Maps Gherkin steps to Rest Assured logic
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-🔹 **Authentication Manager (Authmanager)**
-Implements OAuth 2.0 Refresh Token flow
-Dynamically generates access tokens during runtime
-Prevents token expiry issues in CI pipelines
+### 🔹 Test Runner (`PlayListRunner`)
+- Executes feature files using TestNG
 
-Key Classes TokenGenerartion.java – Generates access token
-            TimeCalculator.java – Manages token validity window
+---
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 🔐 Secure Configuration Strategy
 
-**🔹 Spec Builder (SpectBuilder)**
-Centralized request/response specification
-Defines: Base URI
-          Headers
-          Authentication
-          Logging
-Eliminates duplication across API calls
+### Local Execution
+- Uses Config.properties for non-sensitive values
+- Secrets excluded via .gitignore
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**🔹 Property Management (PropReader)**
+### CI Execution
+- Secrets injected using GitHub Secrets and Jenkins Credentials
 
-Reads configuration dynamically
-Supports CI-friendly environment variables
-Avoids hardcoding secrets inside the codebase
+---
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**🔹 BDD Layer (Feature Files)**
-Written in Gherkin syntax
-Improves readability and stakeholder understanding
-Example  Scenario: Create Spotify Playlist
-                    Given user has valid access token
-                    When user creates a playlist
-                    Then playlist should be created successfully
+## 🚀 CI/CD Integration
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### ✔ GitHub Actions
+- Triggered on push and pull request
+- Executes: mvn clean test
 
-**🔹 Step Definitions (PlaylistSteps)**
-Maps Gherkin steps to RestAssured logic
-Contains request execution and assertions
-Keeps business flow separate from implementation
+### ✔ Jenkins Pipeline
+- Declarative pipeline using Jenkinsfile
+- Stages: Checkout → Build → Test
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
-**🔹 Test Runner (PlayListRunner)**
-Executes feature files using TestNG
-Controls test execution flow
-CI-compatible runner design
+## 🛡 Engineering Best Practices Implemented
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-**🔐 Secure Configuration Strategy**
-Local Execution
-Uses Config.properties for non-sensitive values
-Secrets are excluded via .gitignore
-CI Execution
-Secrets are injected at runtime via: GitHub Secrets
-                                    Jenkins Credentials
-No credentials are stored in source code.
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-**🚀 CI/CD Integration**
-
-**✔ GitHub Actions**
-Triggered on: Push
-              Pull Request
-Executes:  mvn clean test
-Runs on Linux runners
-Ensures fast feedback per commit
-
-
-
-**✔ Jenkins Pipeline**
-
-Declarative pipeline
-Tooling: JDK 11
-        Maven
-Secure credential binding
-Suitable for enterprise CI environments
-Pipeline Stages     Checkout → Build → Test
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-**🛡 Key Engineering Best Practices Used**
-OAuth token lifecycle handling
-CI-safe configuration management
-POJO-based API modeling
-BDD-driven automation
-Environment-independent execution
-Clean separation of concerns
-Defensive API validation
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+- OAuth token lifecycle management
+- CI-safe configuration
+- POJO-based API modeling
+- BDD-driven automation
+- Environment-independent execution
