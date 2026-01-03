@@ -1,32 +1,36 @@
-**🎧 Spotify API Automation Framework | CI/CD Enabled**
+# 🎧 Spotify API Automation Framework
+### CI/CD Enabled | Enterprise-Grade API Test Automation
 
-**📌 Overview**
+---
 
-This repository contains a production-grade API automation framework for validating Spotify Playlist APIs, built using Java, RestAssured, TestNG, and Maven, and fully integrated with CI/CD 
-pipelines using GitHub Actions and Jenkins.
+## 📌 Overview
 
-The framework is designed with real-world automation principles, focusing on:
+This repository contains a **production-grade API automation framework** for validating **Spotify Playlist APIs**, built using **Java, Rest Assured, TestNG, and Maven**, and fully integrated with **CI/CD pipelines** using **GitHub Actions** and **Jenkins**.
 
-- Secure credential handling
-- OAuth 2.0 authentication
-- CI-safe execution
-- Environment independence
-- Robust API response handling
+The framework is designed using **real-world automation engineering principles**, focusing on:
 
-**🧰 Technology Stack**
+- Secure credential handling  
+- OAuth 2.0 authentication  
+- CI-safe execution  
+- Environment-independent execution  
+- Robust API response validation  
 
-| Category         | Tools               |
-| ---------------- | ------------------- |
-| Language         | Java (JDK 11)       |
-| API Automation   | RestAssured         |
-| Test Framework   | TestNG              |
-| Build Tool       | Maven               |
-| CI (Cloud)       | GitHub Actions      |
-| CI (Self-Hosted) | Jenkins             |
-| Authentication   | OAuth 2.0 (Spotify) |
-| Version Control  | Git & GitHub        |
+---
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 🧰 Technology Stack
+
+| Category | Tools |
+|--------|------|
+| Language | Java (JDK 11) |
+| API Automation | Rest Assured |
+| Test Framework | TestNG |
+| Build Tool | Maven |
+| CI (Cloud) | GitHub Actions |
+| CI (Self-Hosted) | Jenkins |
+| Authentication | OAuth 2.0 (Spotify) |
+| Version Control | Git & GitHub |
+
+---
 
 ## 📂 Framework Architecture
 
@@ -66,7 +70,6 @@ Spotify_RestAssured
 ├── Jenkinsfile
 └── README.md
 ```
-
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **🧩 Core Framework Components**
 
