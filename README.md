@@ -77,8 +77,14 @@ Spotify_RestAssured
 
 ### 🔹 POJO Layer (`src/main/java/POJO`)
 - Models Spotify API request and response payloads
-- Uses Jackson annotations for JSON serialization/deserialization
-- Clean separation between API contracts and test logic
+- Uses Jackson annotations for JSON serialization and deserialization
+- Maintains a clean separation between API contracts and test logic
+- Improves maintainability and shields tests from API schema changes
+
+- Example Classes:
+-   PlayList.java
+-   Owner.java
+-   Tracks.java
 
 ### 🔹 Authentication Manager (`Authmanager`)
 - Implements OAuth 2.0 Refresh Token flow
