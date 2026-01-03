@@ -11,3 +11,163 @@ CI-safe execution
 Environment independence
 Robust API response handling
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**🧰 Technology Stack**
+
+| Category         | Tools               |
+| ---------------- | ------------------- |
+| Language         | Java (JDK 11)       |
+| API Automation   | RestAssured         |
+| Test Framework   | TestNG              |
+| Build Tool       | Maven               |
+| CI (Cloud)       | GitHub Actions      |
+| CI (Self-Hosted) | Jenkins             |
+| Authentication   | OAuth 2.0 (Spotify) |
+| Version Control  | Git & GitHub        |
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**🏗 Framework Architecture**
+Spotify_RestAssured
+│
+├── src/main/java
+│   └── POJO
+│       ├── ExternalUrls.java
+│       ├── Followers.java
+│       ├── Owner.java
+│       ├── PlayList.java
+│       └── Tracks.java
+│
+├── src/test/java
+│   ├── Authmanager
+│   │   ├── TokenGenerartion.java
+│   │   └── TimeCalculator.java
+│   │
+│   ├── runners
+│   │   └── PlayListRunner.java
+│   │
+│   ├── StepDefination
+│   │   └── PlaylistSteps.java
+│   │
+│   └── utility
+│       ├── DateAndTimeProvider.java
+│       ├── PropReader.java
+│       └── SpectBuilder.java
+│
+├── src/test/resources
+│   ├── SpotifyFeatures
+│   │   └── Playlist.feature
+│   └── Config.properties
+│
+├── pom.xml
+├── Jenkinsfile
+└── README.md
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**🧩 Core Framework Components**
+
+**🔹 POJO Layer (src/main/java/POJO)**
+Models Spotify API request & response bodies
+Uses Jackson annotations for JSON serialization/deserialization
+Ensures clean separation between test logic and API contracts
+Improves maintainability and protects tests from API schema changes.
+
+Example: PlayList.java
+          Owner.java
+          Tracks.java
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+🔹 **Authentication Manager (Authmanager)**
+Implements OAuth 2.0 Refresh Token flow
+Dynamically generates access tokens during runtime
+Prevents token expiry issues in CI pipelines
+
+Key Classes TokenGenerartion.java – Generates access token
+            TimeCalculator.java – Manages token validity window
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**🔹 Spec Builder (SpectBuilder)**
+Centralized request/response specification
+Defines: Base URI
+          Headers
+          Authentication
+          Logging
+Eliminates duplication across API calls
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**🔹 Property Management (PropReader)**
+
+Reads configuration dynamically
+Supports CI-friendly environment variables
+Avoids hardcoding secrets inside the codebase
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**🔹 BDD Layer (Feature Files)**
+Written in Gherkin syntax
+Improves readability and stakeholder understanding
+Example  Scenario: Create Spotify Playlist
+                    Given user has valid access token
+                    When user creates a playlist
+                    Then playlist should be created successfully
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**🔹 Step Definitions (PlaylistSteps)**
+Maps Gherkin steps to RestAssured logic
+Contains request execution and assertions
+Keeps business flow separate from implementation
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**🔹 Test Runner (PlayListRunner)**
+Executes feature files using TestNG
+Controls test execution flow
+CI-compatible runner design
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**🔐 Secure Configuration Strategy**
+Local Execution
+Uses Config.properties for non-sensitive values
+Secrets are excluded via .gitignore
+CI Execution
+Secrets are injected at runtime via: GitHub Secrets
+                                    Jenkins Credentials
+No credentials are stored in source code.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**🚀 CI/CD Integration**
+
+**✔ GitHub Actions**
+Triggered on: Push
+              Pull Request
+Executes:  mvn clean test
+Runs on Linux runners
+Ensures fast feedback per commit
+
+
+
+**✔ Jenkins Pipeline**
+
+Declarative pipeline
+Tooling: JDK 11
+        Maven
+Secure credential binding
+Suitable for enterprise CI environments
+Pipeline Stages     Checkout → Build → Test
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**🛡 Key Engineering Best Practices Used**
+OAuth token lifecycle handling
+CI-safe configuration management
+POJO-based API modeling
+BDD-driven automation
+Environment-independent execution
+Clean separation of concerns
+Defensive API validation
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
