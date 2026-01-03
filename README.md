@@ -111,7 +111,7 @@ Spotify_RestAssured
 - Supports CI-friendly environment variables
 - Avoids hardcoding secrets inside the codebase
 
-### 🔹 BDD Layer (Feature Files)
+### 🔹 BDD Layer (`Feature Files`)
 - Written in Gherkin syntax
 - Improves readability and stakeholder understanding
 
