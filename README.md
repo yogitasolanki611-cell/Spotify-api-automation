@@ -88,8 +88,12 @@ Spotify_RestAssured
 
 ### 🔹 Authentication Manager (`Authmanager`)
 - Implements OAuth 2.0 Refresh Token flow
-- Dynamically generates access tokens
-- Prevents token expiry in CI runs
+- Dynamically generates access tokens during runtime
+- Prevents token expiry issues in CI pipelines
+
+- Key Classes:
+  - `TokenGenerartion.java – Generates access token`
+  - `TimeCalculator.java – Manages token validity window`
 
 ### 🔹 Spec Builder (`SpecBuilder`)
 - Centralized request/response specification
