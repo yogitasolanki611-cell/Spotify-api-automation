@@ -2,7 +2,7 @@ package POJO;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "type",
     "uri"
 })
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PlayList 
 {
 
@@ -212,3 +212,4 @@ public class PlayList
 	
 
 }
+
