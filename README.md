@@ -39,6 +39,7 @@ Spotify_RestAssured
 │
 ├── src/main/java
 │   └── POJO
+│       ├── ExternalUrls__1.java
 │       ├── ExternalUrls.java
 │       ├── Followers.java
 │       ├── Owner.java
@@ -67,6 +68,7 @@ Spotify_RestAssured
 │   └── Config.properties
 │
 ├── pom.xml
+├── testng.xml
 ├── Jenkinsfile
 └── README.md
 ```
