@@ -74,9 +74,9 @@ Spotify_RestAssured
 - Improves maintainability and protects tests from API schema changes.
 
 - Example:
--               PlayList.java
--               Owner.java
--               Tracks.java
+  - PlayList.java
+  - Owner.java
+  - Tracks.java
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 🔹 **Authentication Manager (Authmanager)**
