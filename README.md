@@ -122,10 +122,14 @@ Spotify_RestAssured
   - `Step 4: Then playlist should be created successfully`
 
 ### 🔹 Step Definitions (`PlaylistSteps`)
-- Maps Gherkin steps to Rest Assured logic
+- Maps Gherkin steps to RestAssured logic
+- Contains request execution and assertions
+- Keeps business flow separate from implementation
 
 ### 🔹 Test Runner (`PlayListRunner`)
 - Executes feature files using TestNG
+- Controls test execution flow
+- CI-compatible runner design
 
 ---
 
@@ -133,10 +137,14 @@ Spotify_RestAssured
 
 ### Local Execution
 - Uses Config.properties for non-sensitive values
-- Secrets excluded via .gitignore
+- Secrets are excluded via .gitignore
 
 ### CI Execution
-- Secrets injected using GitHub Secrets and Jenkins Credentials
+- Secrets are injected at runtime via:
+  - `GitHub Secrets`
+  - `Jenkins Credentials`
+    
+- No credentials are stored in source code.
 
 ---
 
@@ -145,17 +153,26 @@ Spotify_RestAssured
 ### ✔ GitHub Actions
 - Triggered on push and pull request
 - Executes: mvn clean test
+- Runs on Linux runners
+- Ensures fast feedback per commit
 
 ### ✔ Jenkins Pipeline
 - Declarative pipeline using Jenkinsfile
-- Stages: Checkout → Build → Test
+- Tooling:
+  - `JDK 11`
+  - `Maven`
+- Secure credential binding
+- Suitable for enterprise CI environments
+- Pipeline Stages: Checkout → Build → Test
 
 ---
 
 ## 🛡 Engineering Best Practices Implemented
 
-- OAuth token lifecycle management
-- CI-safe configuration
-- POJO-based API modeling
-- BDD-driven automation
-- Environment-independent execution
+- OAuth token lifecycle handling
+- CI safe configuration management
+- POJO based API modeling
+- BDD driven automation
+- Environment independent execution
+- Clean separation of concerns
+- Defensive API validation
