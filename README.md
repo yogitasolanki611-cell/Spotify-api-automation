@@ -26,9 +26,11 @@ The framework is designed with real-world automation principles, focusing on:
 | Authentication   | OAuth 2.0 (Spotify) |
 | Version Control  | Git & GitHub        |
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-**🏗 Framework Architecture**
+## 📂 Framework Architecture
+
+```text
 Spotify_RestAssured
 │
 ├── src/main/java
@@ -41,19 +43,19 @@ Spotify_RestAssured
 │
 ├── src/test/java
 │   ├── Authmanager
-│   │   ├── TokenGenerartion.java
+│   │   ├── TokenGeneration.java
 │   │   └── TimeCalculator.java
 │   │
 │   ├── runners
 │   │   └── PlayListRunner.java
 │   │
-│   ├── StepDefination
+│   ├── StepDefinition
 │   │   └── PlaylistSteps.java
 │   │
 │   └── utility
 │       ├── DateAndTimeProvider.java
 │       ├── PropReader.java
-│       └── SpectBuilder.java
+│       └── SpecBuilder.java
 │
 ├── src/test/resources
 │   ├── SpotifyFeatures
@@ -63,6 +65,7 @@ Spotify_RestAssured
 ├── pom.xml
 ├── Jenkinsfile
 └── README.md
+```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **🧩 Core Framework Components**
