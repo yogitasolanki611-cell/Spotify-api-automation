@@ -81,10 +81,10 @@ Spotify_RestAssured
 - Maintains a clean separation between API contracts and test logic
 - Improves maintainability and shields tests from API schema changes
 
-`Example Classes:
-  - PlayList.java
-  - Owner.java
-  - Tracks.java`
+- Example Classes:
+  - `PlayList.java`
+  - `Owner.java`
+  - `Tracks.java`
 
 ### 🔹 Authentication Manager (`Authmanager`)
 - Implements OAuth 2.0 Refresh Token flow
