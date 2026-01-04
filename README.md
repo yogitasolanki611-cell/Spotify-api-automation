@@ -201,3 +201,41 @@ allure serve target/allure-results
 - Clean separation of concerns
 - Defensive API validation
 - Centralized visual test reporting using Allure
+
+---
+
+
+---
+
+## ⚙️ GitHub Actions CI Execution
+
+The project is executed using **GitHub Actions** to ensure automated validation on every push and pull request.
+
+![GitHub Actions Run](screenshots/github-actions-run.png)
+
+---
+
+## 🧪 Jenkins Pipeline Execution
+
+The framework is integrated with a **Jenkins Declarative Pipeline** for enterprise-grade CI execution.
+
+### Jenkins Console Output (Successful Run)
+![Jenkins Console Success](screenshots/jenkins-console-success.png)
+
+---
+
+## 📊 Allure Test Reporting
+
+The framework integrates **Allure Reporting** to provide rich, interactive test reports.
+
+### Allure Dashboard
+![Allure Dashboard](screenshots/allure-dashboard.png)
+
+### Allure Suites View
+![Allure Suites](screenshots/allure-suites.png)
+
+### Allure Report Integrated with Jenkins
+![Jenkins Allure Reporting](screenshots/jenkins-allure-reporting.png)
+
+---
+
