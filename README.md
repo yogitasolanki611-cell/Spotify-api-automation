@@ -25,6 +25,7 @@ The framework is designed following **real-world automation engineering principl
 | API Automation | Rest Assured |
 | Test Framework | TestNG |
 | Build Tool | Maven |
+| Reporting | Allure Reports |
 | CI (Cloud) | GitHub Actions |
 | CI (Self-Hosted) | Jenkins |
 | Authentication | OAuth 2.0 (Spotify) |
@@ -135,6 +136,27 @@ Spotify_RestAssured
 
 ---
 
+## 📊 Test Reporting (Allure)
+
+- Integrated **Allure Reporting** for rich and interactive test reports
+- Provides:
+  - Step-level execution details
+  - Request/response visibility
+  - Failure analysis with stack traces
+- Supports both local and CI-based report generation
+
+**Generate Allure Report Locally**
+```bash
+mvn clean test
+allure serve target/allure-results
+```
+
+**CI Integration**
+- Allure results are generated during pipeline execution
+- Reports can be published or archived in Jenkins
+
+
+---
 ## 🔐 Secure Configuration Strategy
 
 ### Local Execution
@@ -178,3 +200,4 @@ Spotify_RestAssured
 - Environment independent execution
 - Clean separation of concerns
 - Defensive API validation
+- Centralized visual test reporting using Allure
